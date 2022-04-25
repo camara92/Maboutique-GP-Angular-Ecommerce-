@@ -1,0 +1,42 @@
+footer .content{
+  min-height: calc(100vh - 70vh - 80px);
+}
+footer .logo{
+  text-transform : uppercase;
+  padding: 20px 0;
+}
+.footer-content {
+  background-color: rgb(2, 22, 65);
+  /*height: calc(100vh - 70vh - 80px);*/
+
+  /*display: flex;
+  justify-content: center;
+  align-items: center;*/
+  color: white;
+  /*font-size: 1.5rem;*/
+  /*text-transform: uppercase;*/
+}
+
+.footer-bottom {
+  background-color: rgb(2, 38, 2);
+  height: 70px;
+  color: white;
+}
+.footer-list {
+  list-style: none;
+}
+.footer-list a{
+  text-decoration: none;
+  color: white;
+}
+.footer-widget
+{
+ min-width: 200px;
+ padding: 10px 0;
+ /*text-align: center;*/
+}
+/*modifier largeur image download-app*/
+.download-app img
+{
+  width: 100px;
+}

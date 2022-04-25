@@ -1,0 +1,103 @@
+<div class="product-list">
+  <app-loading *ngIf="isLoading"></app-loading>
+<!--cette condition uniquement si les chargement ne sont pas arrivés -->
+
+  <app-product-item  *ngFor="let product of products" [product]="product"
+  (deleteProductItem)="handleDeleteProduct($event)"
+
+  (displayProductViewModal)="handleDisplayProductViewModal($event)">
+  <!--on définie aussi handleDelete dans le ts list -->
+</app-product-item>
+
+
+<!--on fait la  même chose pour la vérification produits -->
+  <div class="bar" *ngIf="!isLoading && !products.length">
+    <!--on met nfif pour vérifier s'il y a bien des produits pa exemple sion message "sorry "-->
+    <h2 style="color: red;">
+      <img class="oops" src="./assets/images/oops.png" width="300px" height="200px" alt="image oops ">
+      Désolé, il n'y a aucun article disponible pour le moment.
+    </h2>
+    <p>Daouda CAMARA </p>
+
+  </div>
+
+  <app-modal-product-view *ngIf="isDisplayModal"
+  [product]="ModalProduct"
+  (closeModal)="ClickcloseModal()"
+  >
+
+  </app-modal-product-view>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--difficle de faire afficher tous les produits donc on utilise des boucles -->
+<!--<app-product-item [product]="products[1]"></app-product-item>
+ <app-product-item [product]="products[2]"></app-product-item>
+ <app-product-item [product]="products[3]"></app-product-item>
+ <app-product-item [product]="products[9]"></app-product-item>-->
+
+
+<!--
+    <app-product-item></app-product-item>
+  <app-product-item></app-product-item>
+  <app-product-item></app-product-item>
+  <app-product-item></app-product-item>
+  <app-product-item></app-product-item>
+  <app-product-item></app-product-item>
+  <app-product-item></app-product-item>
+  <app-product-item></app-product-item>
+
+ -->

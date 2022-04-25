@@ -1,0 +1,19 @@
+<!--afficher en json pour vérifier : <p>{{slider |json }}</p>
+<p>{{slider |json }}</p>-->
+<div class="slider">
+
+  <div class="slide-item"
+
+  [ngStyle]="{'background-image':'url('+slider[currentIndex]?.imageUrl +')'}">
+
+  <!--[ngStyle]="{'background-image':'url('+currentSlide?.imageUrl +')'}" => ici on peut pas avoir accès aux éléments donc -ci-dessus -->
+
+<img (click)="handleChangeImage(1)" id="direction1" src="/assets/images/icons/prev.png" alt="" class="previous">
+<img (click)="handleChangeImage(-1)" id="direction2" src="/assets/images/icons/next.png" alt="" class="next">
+    <!--
+  <img(click)="" [src]="currentSlide?.imageUrl" [alt]="currentSlide?.name">
+  -->
+
+    <!--<img[src]="slider[0]?.imageUrl" alt="slider-images">-->
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="product-item" (click)="handleClickProduct(product)">
+  <!--il suffit de remplacer deleteProduct pour voir son effet
+    un exemple a été fait mais pas besoin dans ce projet pour l'instant -->
+  <div class="product-image" [routerLink]='[ "product", product?.slug ]'>
+    <img [src]='product? product.imageUrl[0] : ""  ' [alt]="product?.name" height="300px" width="300px">
+    <!--    <img src="./assets/images/f1.jpg" alt="image-produit"
+      height="300px" width="300px">-->
+    <!--product ? operateur ternaire en js -->
+  </div>
+  <div class="product-details">
+    <div class="product-name">
+      <!--on met l'interogation quand si le produit est défini -->
+      <!--on divise par 100 mais pas important -->
+      <h2>{{ product?.name?.substring(0,50) }}{{ product && product.name[41]? "...": null }}</h2>
+    </div>
+
+    <div class="product-price">
+      <h3> {{(product?.sold_price || 0) /100}} &euro;</h3>
+      <del>
+        <h3>{{(product?.regular_price || 0)/100}} &euro;</h3>
+      </del>
+
+    </div>
+    <div class="product-action-button flex g-5 jcc">
+      <button (click)="handleClickProduct(product)" class="btn">Voir</button>
+      <button class="btn" [routerLink]='[ "product", product?.slug ]'>
+        Détails
+      </button>
+      <!--
+      <div class="product-action button flex g-5 jcc">
+
+        ce bouton est anuulé puisque la clique sur l'image devra jouer ce rôle de view
+
+            <button class="btn" [routerLink]='[ "product", product?.slug ]'>
+          Détails
+        </button>
+      </div>-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+header{
+  background-color: rgb(2, 22, 65);
+  height: 80px;
+  color:white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 0 10px ;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  position: sticky;
+  top:0;
+  box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+  /*mettre en z-index pour que la page  inscription soit au bas du header */
+  z-index: 90;/*en dessous de overlay une class viewmodal */
+}
+header .nav-bar ul
+{
+  display: flex;
+  gap :20px;
+  list-style: none;
+}
+.aside-nav-mobile{
+  display: none;
+}
+header a {
+  text-decoration: none;
+  color : white;
+  font-weight: bold;
+
+}
+header .btn{
+  background-color: black;
+}
+/*au survol de la souris */
+header .btn:hover{
+  background-color: rgb(209, 94, 40);
+}
+.logo img{
+  width: 70px;
+  height: 60px;
+  border-radius: 50%;
+
+}
+
+/*bars*/
+.bars img{
+  width: 70px;
+  height: 60px;
+  border-radius: 50%;
+  background: white;
+  border-radius: 10px;
+
+}
+.bars img:hover {
+  border: 2px solid rgb(1, 163, 42);
+  border-radius: 30px;
+}
+.bars {
+  width: 40px;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: none;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 10px;
+}
+.logo{
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid rgb(219, 11, 184);
+  border-radius: 10px;
+}
+.logo:hover{
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: rgb(3, 55, 61);
+}
+
+
+
+ /*Après */
+
+ @media screen and (max-width:900px){
+  header .nav-bar {
+    display: none;
+  }
+  .aside-nav-mobile{
+    display: block;
+  }
+  .bars{
+    display: block;
+  }
+  header{
+    /*justify-content: center;*/
+  }
+}

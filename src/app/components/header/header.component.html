@@ -1,0 +1,38 @@
+<header>
+  <div class="bars"
+   (click)="handleDisplayMobileNav()"
+   (mouseenter)="handleDisplayMobileNav()"
+
+  >
+  <!--  (mouseover)="handleDisplayMobileNav()"-->
+      <!--evenement au survol de l'eleent -->
+      <img src="./assets/images/bars.webp" alt="bars">
+
+  </div>
+  <div class="logo">
+    <img src="./assets/images/daouda.jpeg" alt="logo_daouda">
+    <a href="">{{siteName }} </a>
+  </div>
+  <!--afficher la bar nav-bar en vrsion mobile => aside-nav -->
+  <!--ngfor pour parcourir -->
+  <div class="nav-bar">
+    <ul>
+      <li *ngFor="let item of navs_data"><a [routerLink]="item?.path">{{item.name}} </a></li>
+      <li *ngFor="let item of auths_data"><a [routerLink]="item?.path" class="btn">{{item.name}} </a></li>
+      <!--
+      <li> <a class="btn" routerLink="/signup">Inscription</a></li>
+      <li> <a class="btn" routerLink="/signin">Connexion</a></li>-->
+      <!--
+      <li> <a routerLink="#">Contact</a></li>
+      <li> <a routerLink="#">{{ seconde }}</a></li>
+     -->
+    </ul>
+  </div>
+</header>
+<app-aside-nav
+(close)="handlecloseMobileNav()"
+*ngIf="isDisplayMobileNav"></app-aside-nav>
+<!--
+  on peut faire afficher la bare nav mobile aside avec du css uniquement mais aussi avec la logique
+  <app-aside-nav class="aside-nav-mobile"></app-aside-nav>-->
+<!--routerlink permet de faire le chargement au sein de l'application, aucune recharge comme dans le cas de site web ou la recherhce de l'information doit venir des requêtes -->

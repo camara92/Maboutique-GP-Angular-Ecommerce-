@@ -1,0 +1,15 @@
+<div class="single-product-datails-container content ">
+  <div class="product-details-title">
+    <ul class="flex unlisted">
+      <!--remplacment de la class par routerlinkactive-->
+      <li><a routerLink="description" routerLinkActive="active">Description</a></li>
+      <li><a routerLink="additionnal-info" routerLinkActive="active">Inforamtions additionnelles </a></li>
+      <li><a routerLink="vendor-info" routerLinkActive="active">Vendor</a></li>
+      <li><a routerLink="reviews" routerLinkActive="active">Reviews</a></li>
+    </ul>
+  </div>
+  <div class="product-details-infos">
+    <!--le routeroutlet peut ecouter des element comme activate, attach, deactivate, detach-->
+    <router-outlet (activate)="handleChangeDetails($event)"></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+.signup{
+
+  height: 80vh;
+
+}
+
+.btn
+{
+  font-size: 1.4rem;
+  height: 40px;
+  background-color: #1d1d1d;
+  border:none;
+  min-width: 100px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+
+}
+.form-container{
+  width: 500px;
+  position: relative;
+  top:50%;
+  left:50%;
+  border: 0.1px solid black;
+  transform: translate(-50% ,-50%);
+
+
+}
+form{
+  border: 0.1px solid rgb(67, 64, 64);
+  padding: 10px;
+  background-color: rgb(182, 211, 122);
+
+
+}
+form .form-line{
+  height: 40px;
+  padding: 10px 0;
+
+
+}
+
+form .for-line input{
+  font-size: 2rem;
+  height: 40px;
+}
+
+/*btn dans bouton */
+form .btn{
+  height: 45px;
+}
+form h2{
+  text-align: center;
+}
+/*validation du formulaire et parametrage de saisie */
+button:disabled{
+  cursor: not-allowed;
+  background-color: white;
+  opacity: 0.5;
+  color: rgb(143, 155, 99);
+  /*tant que il ne'st pas rempli le bouton doit être moyennement caché : formulaire valide ou pas */
+}
+.error{
+  color  :red;
+}
+form .act-to-signup a{
+  color : red;
+  text-decoration: none;
+}
+form .act-to-signup {
+  font-style:italic
+}
+/*fin de la validation */
+
+@media screen  and(max-width: 550px) {
+.form-container{
+   width: 90%;
+
+ }
+}

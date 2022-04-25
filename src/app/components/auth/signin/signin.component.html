@@ -1,0 +1,41 @@
+<div class="signup ">
+  <div class="form-container">
+    <form action="" [formGroup]="signinForm">
+      <h2 class="tc">Connexion </h2>
+      <p class="act-to-signin tc">Vous n'avez pas de compte ? cliquer sur <a routerLink="/signup">inscription</a> </p>
+      <div class="form-line flex">
+        <input class="flex-1 g-10" type="email" [formControl]="email" name="email" placeholder="votre adresse email.............."
+          />
+      </div>
+      <!--si le champ a été touché et que le mail n'est pas valide -->
+      <div class="error" *ngIf="email.dirty && !email.valid">
+        <!--recherhe des errors : -->
+        <p *ngIf="email.hasError('required')">
+          L'email est requis !
+        </p>
+        <p *ngIf="!email.hasError('required')"> L'email ne respecte pas le format attendu.</p>
+      </div>
+
+      <div class="form-line flex">
+        <input class="flex-1" type="password" [formControl]="password" name="password" placeholder="votre mot de passe.............."
+          />
+        </div>
+        <!--de la meme pour le mot de passe : 6 caractères -->
+        <div class="error" *ngIf="password.dirty && !password.valid">
+          <!--recherhe des errors : -->
+          <p *ngIf="password.hasError('required')">
+            Le mot de passe est requis !
+          </p>
+          <p *ngIf="!password.hasError('minlength')">Le mot de passe doit être au moins 6 caractères</p>
+        </div>
+
+
+
+      <div class="button flex ">
+        <button class="btn  flex-1" [disabled]="!this.signinForm.valid" (click)="handleSubmit()">Se connecter  </button>
+      </div>
+      <!--<p>{{user |json }} </p>-->
+
+    </form>
+  </div>
+<!--de la meme chose pour la page inscription voir wash shwa doauda-->

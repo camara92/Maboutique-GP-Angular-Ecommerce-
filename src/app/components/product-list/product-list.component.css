@@ -1,0 +1,24 @@
+.product-list
+{
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap :50px;
+  flex-wrap: wrap;
+}
+.list-produt
+{
+  text-align: center;
+  margin: 10px;
+  text-decoration: underline red;
+
+}
+.oops{
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+}
+
+
+
+

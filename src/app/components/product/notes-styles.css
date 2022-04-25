@@ -1,0 +1,103 @@
+.single-product{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.single-product{
+  /*cursor: pointer;*/
+}
+.single-product-image-list{
+  cursor: pointer;
+}
+.single-product .signle-product-image{
+  justify-content: flex-end;
+}
+/*
+.single-product .signle-product-image-current img{
+
+}*/
+.signle-product-details h2, .signle-product-details h4{
+  font-size: 2rem;
+  line-height: 40px;
+
+
+}
+.signle-product-details h4{
+  color:rgb(22, 78, 163)
+}
+.signle-product-details h5{
+  font-size: 2rem;
+  line-height: 40px;
+  color : red;
+}
+.single-product-image-current img {
+
+  width: 420px;
+
+}
+/*bordure de l'image en defielemnent */
+.single-product img.current{
+  border: 2px solid rgb(22, 78, 163);
+}
+.btn{ background-color: black;
+color: white;}
+/*pour la partie mobile ou un ecran inférieur à 900px */
+
+@media screen and (max-width:900px){
+.single-product{
+  flex-direction: column;/*column-reverse;*/
+  justify-content: center;
+}
+.single-product .signle-product-image {
+  /*center l'image view */
+  justify-content: center;
+}
+/*alignement en colonne selon la mediaqueries */
+.single-product .signle-product-image {
+  /*center l'image view */
+  flex-direction: column;
+}
+
+
+}
+/*ecran de 450px */
+@media screen and (max-width:450px){
+
+  .single-product .signle-product-image img{
+    /*width*/
+    width: 95%;
+  }
+  /*pour faire wrapper des slides images produits */
+  .signle-product-image{
+    flex-direction: column;
+
+  }
+
+  }
+
+  /*coup de plus pour les mobiles 375*/
+  @media screen and (max-width:375px){
+    .single-product{
+      flex-direction: column;/*column-reverse;*/
+      justify-content: center;
+    }
+    .single-product .signle-product-image {
+      /*center l'image view */
+      justify-content: center;
+    }
+    /*alignement en colonne selon la mediaqueries */
+    .single-product .signle-product-image {
+      /*center l'image view */
+      flex-direction: row;
+    }
+    .single-product .signle-product-image img{
+      /*width*/
+      width: 60%;
+    }
+    .single-product-image-current img {
+
+      width: 220px;
+
+    }
+
+
+    }

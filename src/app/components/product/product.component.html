@@ -1,0 +1,49 @@
+<app-loading *ngIf="isLoading"></app-loading>
+<!--cette condition uniquement si les chargement ne sont pas arrivés -->
+<div *ngIf="!isLoading" class="single-product flex content g-10 ">
+  <div class="signle-product-image flex-1 flex b g-10">
+    <!--creer deux colonnes pour les images -->
+    <div class="single-product-image-list  g-10 flex-1">
+
+      <img *ngFor="let url of product?.imageUrl" [src]="url" [alt]="product?.name" width="100px"
+        (click)="handleChangeCurrentImage(url)" (mouseover)="handleChangeCurrentImage(url)"
+        [ngClass]=" {current: currentImage==url } ">
+      <!--classe qui class="current" -->
+    </div>
+    <div class="single-product-image-current flex-3">
+      <img [src]="currentImage" [alt]="product?.name">
+    </div>
+
+  </div>
+  <div class="signle-product-details flex-1 b">
+    <h2>{{ product?.name }}</h2>
+    <div class="single-product-view-details-price flex aic g-10">
+      <h4>{{(product?.sold_price || 0)/100 | currency:"EUR"}}</h4>
+      <del>
+        <h5>{{(product?.regular_price || 0)/100 | currency:"EUR" }} </h5>
+      </del>
+      <!--taux de réduction -->
+      <h4> {{ product?((product.regular_price/100 - product.sold_price/100)/100 | percent ): null }}</h4>
+    </div>
+    <!--ajouter de bouton pour le paiement -->
+    <div class="product-action-button flex g-5 column">
+      <button class="btn-main flex-1"> Payer </button>
+      <button class="btn-main flex-1"> Ajouter une carte </button>
+      <app-paiement-card [fullWidth]="true"></app-paiement-card>
+    </div>
+    <!--fin de button -->
+    <div class="single-product-view-details-created-at">
+      {{ product?.created_at }}
+    </div>
+  </div>
+</div>
+<app-product-details *ngIf="!isLoading" [product]="product"></app-product-details>
+
+
+
+<!--<div class="product-list">
+  <app-product-item></app-product-item>
+  <p>{{ product | json }} </p>
+
+  <app-product-list></app-product-list>
+</div>-->

@@ -1,0 +1,72 @@
+<div class="signup ">
+  <div class="form-container">
+    <form action="" [formGroup]="signupForm">
+      <h2>Inscription</h2>
+      <p class="act-to-signup tc">Vous avez un compte ? cliquer sur <a routerLink="/signin">se connecter</a> </p>
+      <div class="form-line flex g-10 wrap">
+        <input class="flex-1" ty g-10pe="text" [formControl]="firstname" name="firstname"
+          placeholder="votre prénom.............." />
+        <!--firstname parameter -->
+        <div class="error" *ngIf="firstname.dirty && !firstname.valid">
+          <!--recherhe des errors : -->
+          <p *ngIf="firstname.hasError('required')">
+            Veuiller ajouter votre prénom => Daouda
+          </p>
+          <p *ngIf="!firstname.hasError('minlength')">Votre prénom doit contenir minimum 2 lettres </p>
+        </div>
+      </div>
+      <!--lastname -->
+      <div class="form-line flex g-10 wrap">
+        <input class="flex-1" type="text" [formControl]="lastname" name="lastname"
+          placeholder="votre nom.............." />
+        <div class="error" *ngIf="lastname.dirty && !lastname.valid">
+          <!--recherhe des errors : -->
+          <p *ngIf="lastname.hasError('required')">
+            Veuiller ajouter votre prénom => exempel : CAMARA
+          </p>
+          <p *ngIf="!lastname.hasError('minlength')">Votre nom doit contenir minimum 2 lettres </p>
+        </div>
+      </div>
+
+      <!--email -->
+      <div class="form-line flex">
+        <input class="flex-1 g-10" type="email" [formControl]="email" name="email"
+          placeholder="votre adresse email.............." />
+      </div>
+      <!--si le champ a été touché et que le mail n'est pas valide -->
+      <div class="error" *ngIf="email.dirty && !email.valid">
+        <!--recherhe des errors : -->
+        <p *ngIf="email.hasError('required')">
+          Un email valide est requis !
+        </p>
+        <p *ngIf="!email.hasError('required')">L'email ne respecte pas le format attendu.</p>
+      </div>
+
+      <div class="form-line flex">
+        <input class="flex-1" type="password" [formControl]="password" name="password"
+          placeholder="votre mot de passe.............." />
+      </div>
+      <!--de la meme pour le mot de passe : 6 caractères -->
+      <div class="error" *ngIf="password.dirty && !password.valid">
+        <!--recherhe des errors : -->
+        <p *ngIf="password.hasError('required')">
+          Le mot de passe est requis !
+        </p>
+        <p *ngIf="!password.hasError('minlength')">Le mot de passe doit être au moins 6 caractères</p>
+      </div>
+      <!--pass_confirm -->
+      <div class="form-line flex">
+        <input class="flex-1" type="password" name="password_confirm" [formControl]="password_confirm"
+          placeholder="confirmer votre mot de passe .............." />
+      </div>
+
+      <!--bouton ou btn -->
+      <div class="button flex ">
+
+        <button class="btn  flex-1" [disabled]="!this.signupForm.valid" (click)="handleSubmit()">S'inscrire </button>
+      </div>
+      <!--<p>{{user |json }} </p>-->
+    </form>
+  </div>
+
+</div>

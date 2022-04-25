@@ -1,0 +1,18 @@
+.aside-nav {
+  position: fixed;
+  background-color: rgb(2, 22, 65);
+  color: white;
+  width: 300px;
+  height: 100vh;
+  z-index: 80;
+
+}
+
+.aside-nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+}
