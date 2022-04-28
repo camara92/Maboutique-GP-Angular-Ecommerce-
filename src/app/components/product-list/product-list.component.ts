@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Product } from 'src/app/models/products';
+import { ResultRequest } from 'src/app/models/result-request';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -11,7 +12,8 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductListComponent implements OnInit, OnDestroy {
 
 //créezr une variables contenant des produits
-products:Product[] = [];
+resultData: ResultRequest<Product> | undefined;
+products: Product[]=[]
 isDisplayModal: boolean=false;
 ModalProduct:Product | undefined;
 productsSub:Subscription|undefined;
@@ -27,7 +29,33 @@ isLoading:boolean=true;
     //on va alors récuperer les objects par cette dependance et à travers le service on peut recuperer dans getproducts ou mettre produts en public
     //l'intéret est que dès qu'on a des produits on peut faire des injections et
    // this.products = this.productService.getProducts()
+
    this.productsSub= this.productService.getProducts()
+   .subscribe({
+     next:(resultData:ResultRequest<Product>)=>{
+//verifier si donnée
+if(resultData.isSuccess){
+
+  //sauvegarde des données :
+
+  this.products = resultData.results
+
+}
+
+
+       this.isLoading=false
+
+     },
+     error:(error:any)=>{
+       console.log('Error :', error)
+       this.isLoading=true
+     },
+     complete:()=>{
+console.log("Completé ou réussie")
+     }
+
+   })
+ /* this.productsSub= this.productService.getProducts()
    .subscribe({
      next:(products:Product[])=>{
        this.products= products

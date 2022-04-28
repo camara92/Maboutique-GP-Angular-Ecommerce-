@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { interval, Observable, of } from 'rxjs';
 import { Product } from '../models/products';
 import { environment } from 'src/environments/environment';
+import { ResultRequest } from '../models/result-request';
 
 //on peut injecter des elents extérieurs par ce service
 @Injectable({
@@ -15,9 +16,9 @@ export class ProductService {
   //declaration de l'api ou récupration des information au niveau du fichier json crée dans api
   //on utlise cette méthode pour ne pas à faire tout mais on met à jour lurl au niveau de environnement
 
- private urlAPI:string= "http://localhost:4200/assets/api/productsAll.json"
+ //private urlAPI:string= "http://localhost:4200/assets/api/productsAllFour.json"
 
- // private urlAPI:string= environment.serverUrl
+ private urlAPI:string= environment.serverUrl.products
   //private urlAPI:string= "http://localhost:4200/assets/api/products.json"
 
 
@@ -43,8 +44,8 @@ export class ProductService {
       }
     })
   }*/
-  getProducts():Observable<Product[]>{
-
+  getProducts():Observable<ResultRequest<Product>>{
+//tenir compte que les produits récupérées ne sont plus objet array : getProducts():Observable<Product[]
     /*
     get: recuper sur le serveur
     patch ou put : modification
@@ -52,7 +53,11 @@ export class ProductService {
     post : envoie
      this.http.get<Product[]>(this.urlAPI)=> nous retourne un observable
     * */
-    return this.http.get<Product[]>(this.urlAPI)
+    return this.http.get<ResultRequest<Product>>(this.urlAPI)
+    //ses informations seront ecoutées au niveau de home
+    
+    console.log(this.http.get<Product[]>(this.urlAPI));
+
 
   }
   getNumber(): Observable<Number> {
@@ -82,5 +87,7 @@ export class ProductService {
   }
   deleteProduct(_idproduct: string) {
 
+
   }
 }
+

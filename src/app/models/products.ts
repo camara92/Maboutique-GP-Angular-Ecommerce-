@@ -1,3 +1,5 @@
+import { Category } from "./category";
+
 export interface Product {
   //interface
   _id:string,
@@ -9,7 +11,7 @@ export interface Product {
   color?:string[],
   size?:string,
   stock?:string,
-  categrie:string[],
+  categories:Category[],
   imageUrl:string[],
   sold_price:number,
   regular_price:number,

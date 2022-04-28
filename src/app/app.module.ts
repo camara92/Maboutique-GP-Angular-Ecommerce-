@@ -23,6 +23,8 @@ import { ProductVendorComponent } from './components/product-tabs/product-vendor
 import { ProductReviewsComponent } from './components/product-tabs/product-reviews/product-reviews.component';
 import { AsideNavComponent } from './components/aside-nav/aside-nav.component';
 import { HomeSliderComponent } from './components/home-slider/home-slider.component';
+import { ProductsContainerComponent } from './components/products-container/products-container.component';
+import { PageTitleComponent } from './components/page-title/page-title.component';
 
 //mport forms modules
 
@@ -47,7 +49,9 @@ import { HomeSliderComponent } from './components/home-slider/home-slider.compon
     ProductVendorComponent,
     ProductReviewsComponent,
     AsideNavComponent,
-    HomeSliderComponent
+    HomeSliderComponent,
+    ProductsContainerComponent,
+    PageTitleComponent
   ],
   imports: [
     BrowserModule,

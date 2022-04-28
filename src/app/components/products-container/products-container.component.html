@@ -1,0 +1,20 @@
+<app-page-title title="Products"></app-page-title>
+
+<!--{{ categories | json }}-->
+<div class="products-container flex content">
+<div class="products-category ">
+  <ul class="unlisted">
+    <li *ngFor="let category of categories?.results">
+
+      <a  href="#"
+      (click)="handleClick($event, category)"
+      >{{ category.name }} </a></li>
+  </ul>
+</div>
+<div class="products-list flex-1 b">
+<!--voir les produits -->
+Daouda
+</div>
+
+</div>
+//daouda 

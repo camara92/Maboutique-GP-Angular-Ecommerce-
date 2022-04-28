@@ -8,6 +8,7 @@ import { ProductDescriptionComponent } from './components/product-tabs/product-d
 import { ProductReviewsComponent } from './components/product-tabs/product-reviews/product-reviews.component';
 import { ProductVendorComponent } from './components/product-tabs/product-vendor/product-vendor.component';
 import { ProductComponent } from './components/product/product.component';
+import { ProductsContainerComponent } from './components/products-container/products-container.component';
 //creation des routes
 //au cas où on a initié les imports, on peu ne pas importer car appmdoule l'a dejà fait lors de la création du projet
 
@@ -45,6 +46,11 @@ children:[
 },
   {
     path: 'product/:_id', component: ProductComponent,
+    pathMatch: "full"
+  },
+
+  {
+    path: "products", component: ProductsContainerComponent,
     pathMatch: "full"
   },
   {

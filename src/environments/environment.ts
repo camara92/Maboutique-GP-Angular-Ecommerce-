@@ -4,9 +4,12 @@
 
 export const environment = {
   production: false,
-  serverUrl:  "http://localhost:4200/assets/api/productsAllFour.json",
+  serverUrl:  {products:"http://localhost:4200/assets/api/productsAllFour.json",
+  categories:"http://localhost:4200/assets/api/categories.json"  },
   siteName:'Atlas Shop',
   siteEmail: "daoudasouleymanecamara8@gmail.com"
+
+
 };
 
 /*
